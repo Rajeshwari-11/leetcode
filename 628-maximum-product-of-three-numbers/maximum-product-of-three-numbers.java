@@ -2,14 +2,9 @@ class Solution {
     public int maximumProduct(int[] nums) {
         Arrays.sort(nums);
        
-        int res=0;
-        for(int i=0;i<nums.length-2;i++){
-            int ans =nums[nums.length-1];
-            ans= ans*nums[i]*nums[i+1];
-            if(Math.abs(ans)>res){
-                res=ans;
-            }
-        }
+        int c1=nums[0]*nums[1]*nums[nums.length-1];
+        int c2 =nums[nums.length-1]*nums[nums.length-2]*nums[nums.length-3];
+        int res = Math.max(c1,c2);
         return res;
         
     }
